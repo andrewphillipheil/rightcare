@@ -109,7 +109,7 @@
 		        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-11 text-white slide-login">
 
 		          <div style="height:500px;">
-		            <section class="panel dragme group1" style="border-radius:20px; padding:10px;">
+		            <section id="form-lg" class="panel dragme group1" style="border-radius:20px; padding:10px;">
 		              <header class="panel-heading text-center" style="border-top-left-radius:20px; border-top-right-radius:20px; padding-bottom:10px;">
 		                <%= image_tag "logo-rc.png", :style => "width:100px;" %>
 		              </header>
@@ -140,7 +140,7 @@
 				        <%= render "devise/shared/links" %>
 				        <% if alert || flash[:alert] || flash[:error] %>
 				        	<p class="notice"><%= notice %></p>
-	       					<p class="alert alert-danger alert-danger-devise"><%= alert %></p>
+	       					<p class="alert alert-danger alert-danger-devise border-radius-20"><%= alert %></p>
 	       				<% end %>
 					</div>
 			  <% end %>         
@@ -234,11 +234,11 @@ $(function() {
 	});
 
 	// this one control if the draggable is dropped
-	$('body').droppable({
+	$('body').droppable({ 
 	    accept      : '.dragme',
 	    drop        : function(event, ui){
-	        if(outside == 1){
-	           $('#form-drag').submit();
+	        if(outside == 1){ 
+	           $('#form-drag').submit(); 
 	        }else{
 	           $('#form-drag').submit();
 	        }
