@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Rightcare::Application.config.secret_key_base = '97259d26c1dabb87c5fbe75899e3071ff563aa4433c2a594630c7ea908256cea86673261e16b19d887f68cb87496eb6554c0c503252e7f0da29379d1db405d6d'
+Rightcare::Application.config.secret_key_base = '9b92be50dbc795eee2ebc61acefa51fccddb54699303b8f74be5b184d4b629a343c1f59f7bd5831764855fc55f5f7564946f3eae5bb9c7f78bc94e70ad140ac2'
