@@ -1,0 +1,249 @@
+ 
+<style>
+	#content { 
+		background:url('<%= asset_path "hp-bg.jpg" %>');
+		background-size:cover;
+	}
+
+	.hp-bg-black { 
+	    background: rgba(16, 97, 184, 0.8);
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    right: 0;
+	    bottom: 0;
+	}	
+
+	.hp-bg-blue { 
+	    background: rgba(55, 55, 55, 0.6);
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    right: 0;
+	    bottom: 0;
+	}	
+
+	.hospital-bg {
+	}
+
+</style>
+  
+  <section id="content" class="wrapper-md animated fadeInUp">
+  	<div class="hp-bg">
+  		<div class="hp-bg-blue">
+			<div class="row slide-login-left">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+					<%= image_tag "icon-rc.png", :class => "icon-top-signin" %>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12  col-md-12 col-sm-12 col-xs-12 text-center hide-mobile">
+					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+					<!-- Indicators -->
+						
+
+						<!-- Wrapper for slides -->
+						<div class="carousel-inner" style="width:50%; margin:auto;">
+							<div class="item active">  
+								<h1 class="text-white font-bold;">Clock In to Demo</h1>
+								<p class="text-white text-xl font-superthin">
+									Start your shift right with Right Care
+								</p>
+							</div>
+							<div class="item"> 
+								<h1 class="text-white font-bold;">Use in Real Time</h1>
+								<p class="text-white text-xl font-superthin">
+									Don't worry. 	We'll walk you through it. 
+								</p>
+							</div>
+						</div>
+						<ul class="social-icons">
+							<li class="bg-facebook">
+								<a href="#">
+									<i class="fa fa-facebook"></i>
+								</a>
+							</li>
+							<li class="bg-twitter">
+								<a href="#">
+									<i class="fa fa-twitter"></i>
+								</a>
+							</li>
+
+							<li class="bg-linkedin">
+								<a href="#">
+									<i class="fa fa-linkedin"></i>
+								</a>
+							</li>
+						</ul>
+						<!-- Controls -->
+						<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+						<span class="glyphicon glyphicon-chevron-left"></span>
+						</a>
+						<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+						<span class="glyphicon glyphicon-chevron-right"></span>
+						</a>
+
+						<ol class="carousel-indicators">
+						<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+						<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+						</ol>
+					</div>
+				</div>
+			</div>
+			<!--
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+					
+				</div>
+			</div>
+			-->	
+		</div>
+	</div>
+  	<div class="hospital-bg">
+  		<div class="hp-bg-black">
+		    <div class="row m-n animated fadeInUp">
+		      <div id="draggable" class="ui-widget-content">
+		      	<div class="col-xs-12 visible-xs m-t-lg to">
+		      		<p class="visible-xs text-white width-100 text-center text-md">Clock in to Demo</p>
+		      	</div>
+		        <div class="col-md-6 col-md-offset-4 col-sm-8 col-sm-offset-2 col-xs-11 text-white slide-login">
+
+		          <div style="height:500px;">
+		            <section class="panel dragme group1" style="border-radius:20px; padding:10px;">
+		              <header class="panel-heading text-center" style="border-top-left-radius:20px; border-top-right-radius:20px; padding-bottom:10px;">
+		                <%= image_tag "logo-rc.png", :style => "width:100px;" %>
+		              </header>
+
+		 			<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "panel-body", :id => "form-drag", :style => "padding:0px;"}) do |f| %>
+					<div class="form-group">
+						<div>
+							<%= f.label :email, :class => "control-label text-danger text-center width-100" %><br />
+							<%= f.email_field :email, :placeholder => "email", :class => "form-control input-lg border-radius-20" %>
+						</div>
+
+						<div><%= f.label :invite, :class => "control-label text-danger text-center width-100 m-t-sm" %><br />
+						<%= f.password_field :password, :placeholder => "invite code", :class => "form-control input-lg border-radius-20"  %></div>
+		 
+		                <p class="text-muted width-100 text-center m-t-xs">
+		                  Slide <%= image_tag "icon-rc.png",  :style => "width:20px;" %> down to clock in
+		                </p>
+				        
+				        <div class="line line-dashed">
+				        </div>
+				        
+				        <p class="text-muted text-center">
+				          <small>
+				            Do not have an invite code?
+				          </small>
+				        </p>
+				        
+				        <%= render "devise/shared/links" %>
+				        <% if alert || flash[:alert] || flash[:error] %>
+				        	<p class="notice"><%= notice %></p>
+	       					<p class="alert alert-danger alert-danger-devise"><%= alert %></p>
+	       				<% end %>
+					</div>
+			  <% end %>         
+		             
+		            </section>
+		          </div>
+		        </div>
+		        <div class="col-md-1 col-sm-1 col-xs-1 m-t-lg padder-v text-center slide-login" style="margin-left:-60px;">
+		          <section id="containment" class="panel" style="border-radius:35px; width:70px; height:220px; padding:5px; position:relative; -moz-box-shadow: inset 0px 1px 21px 0px #ffffff; -webkit-box-shadow: inset 0px 1px 21px 0px #ffffff; box-shadow: inset 0px 1px 21px 0px #ffffff; background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #cfcfcf), color-stop(1, #a8a8a8) ); background: -moz-linear-gradient( center top, #cfcfcf 5%, #a8a8a8 100% ); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cfcfcf', endColorstr='#a8a8a8'); background-color: #cfcfcf; text-shadow: 1px 1px 0px #6b6a6b; border: 5px solid #a3a3a3; color:#fff; text-shadow: 1px 1px 0px #a5a5a5; margin-top:240%;">
+		            <section class="panel dragme group1" style="border-radius:50%; height:50px; width:50px; z-index:999; position:relative; margin-bottom:0px;">
+		               <%= image_tag "icon-rc.png",  :class => "img-circle width-100"%>
+		            </section>
+		            <section id="droppable" class="panel text-grey ui-widget-header" style="border-radius:50%; background-color:#919191;  height:50px; width:50px; position:absolute; bottom:0px; margin-bottom:5px; border:1px dashed #535353;" > 
+		              <i class="fa fa-unlock" style="padding:18px;"></i>
+		            </section>
+		 
+		            <div style="position:absolute; top:30%; width:50px; padding:10px;" class="text-center">
+		              <i class="fa fa-ellipsis-v"></i><br>
+		              <i class="fa fa-ellipsis-v"></i><br>
+		              <i class="fa fa-arrow-down"></i>
+		            </div>
+		          </section> 
+
+		           
+		        </div>
+		      </div>
+		    </div> 
+		</div>
+	</div>
+  </section>  
+  <script>
+  var getAll = function(t) {
+    return $('.group' + t.helper.attr('class').match(/group([0-9]+)/)[1]).not(t);
+  };
+
+$(function() {
+// add drag functionality
+	$(".dragme").draggable({
+	  revert: true,
+	  revertDuration: 10,
+	  containment: "parent",
+	  axis: 'y',
+	  // grouped items animate separately, so leave this number low 
+	  
+	  stop: function(e, ui) {
+	      getAll(ui).css({
+	          'top': ui.helper.css('top'),
+	          'left': 0
+	      });
+	  },
+	  drag: function(e, ui) {
+	      getAll(ui).css({
+	          'top': ui.helper.css('top'),
+	          'left': ui.helper.css('left')
+	      });
+	  }
+	});
+
+	$( ".dragme" ).draggable({
+	  containment: "parent",
+	  axis: 'y',
+	  revert: true,
+	  revertDuration: 10
+	});
+
+	var outside = 0;
+
+	// this one control if the draggable is outside the droppable area
+	$('#droppable').droppable({
+	    accept      : '.dragme',
+	    out         : function(){
+	        outside = 1;
+	        $( this )
+	          .addClass( "ui-state-highlight" )
+	          .find( "i" )
+	            .removeClass( "fa-unlock" )
+	            .addClass("fa fa-lock");
+
+	          $('#form-drag').submit();
+	    },
+	    over        : function(){
+	        outside = 0;
+	        $( this )
+	          .addClass( "ui-state-highlight" )
+	          .find( "i" )
+	            .removeClass( "fa-unlock" )
+	            .addClass("fa fa-lock");
+
+	          $('#form-drag').submit();
+	    } 
+	});
+
+	// this one control if the draggable is dropped
+	$('body').droppable({
+	    accept      : '.dragme',
+	    drop        : function(event, ui){
+	        if(outside == 1){
+	           $('#form-drag').submit();
+	        }else{
+	           $('#form-drag').submit();
+	        }
+	    }
+	}); 
+});
+
+  </script>

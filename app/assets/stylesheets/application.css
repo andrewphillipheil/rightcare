@@ -1,0 +1,52 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+ *= require bootstrap
+ *= require font-awesome 
+ *= require_self
+ *= require_tree .
+ */
+
+.carousel-control .icon-prev, .carousel-control .glyphicon-chevron-left {
+	left: 90%;
+}
+
+.carousel-control .icon-next, .carousel-control .glyphicon-chevron-right {
+	right: 90%;
+} 
+ 
+
+.social-icons  {
+	list-style: none;
+	padding-left:10px; 
+	width:200px;
+	margin:auto;
+}
+.social-icons li {
+	float:left;
+	margin-right:20px;
+	width:40px;
+	height:40px;
+	line-height: 40px;
+	border-radius:50%;
+	border:#eee solid 1px; 
+}
+
+.social-icons li>a {
+	font-size:20px;
+	color:#fff;
+}
+
+@media screen and (min-width: 768px) {
+	.carousel-indicators {
+		bottom: -100px;
+	}
+}
